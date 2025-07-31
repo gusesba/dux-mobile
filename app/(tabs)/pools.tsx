@@ -1,9 +1,10 @@
-import { SafeAreaView, StyleSheet, Text } from "react-native";
+import PoolCard from "@/components/pools/PoolsCard";
+import { SafeAreaView, StyleSheet } from "react-native";
 
 export default function Pools() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Pools Page</Text>
+      <PoolCard />
     </SafeAreaView>
   );
 }
