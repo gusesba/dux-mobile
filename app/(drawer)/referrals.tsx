@@ -1,76 +1,86 @@
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
-import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function Referrals() {
   const [selectedTab, setSelectedTab] = useState("Overview");
 
   return (
-      <ScrollView style={styles.container} contentContainerStyle={{ padding: 16 }}>
-        <View style={styles.tabs}>
-          {["Overview", "Activity", "Transactions"].map((tab) => (
-            <TouchableOpacity
-              key={tab}
-              style={[
-                styles.tabButton,
-                selectedTab === tab && styles.tabButtonActive,
-              ]}
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{ padding: 16 }}
+    >
+      <View style={styles.tabs}>
+        {["Overview", "Activity", "Transactions"].map((tab) => (
+          <TouchableOpacity
+            key={tab}
+            style={[
+              styles.tabButton,
+              selectedTab === tab && styles.tabButtonActive,
+            ]}
             onPress={() => setSelectedTab(tab)}
+          >
+            <Text
+              style={[
+                styles.tabText,
+                selectedTab === tab && styles.tabTextActive,
+              ]}
             >
-              <Text
-                style={[
-                  styles.tabText,
-                  selectedTab === tab && styles.tabTextActive,
-                ]}
-              >
-                {tab}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-
-        <View style={styles.card}>
-          <Text style={styles.sectionTitle}>Performance Overview</Text>
-          <Text style={styles.sectionDescription}>
-            Your referral activity across all pools and timeframes
-          </Text>
-          <View style={styles.metrics}>
-            <View style={styles.metricBox}>
-              <Text style={styles.metricValue}>30</Text>
-              <Text style={styles.metricLabel}>Total Transactions</Text>
-            </View>
-            <View style={styles.metricBox}>
-              <Text style={styles.metricValue}>$5,142</Text>
-              <Text style={styles.metricLabel}>Total referred volume</Text>
-            </View>
-          </View>
-
-           <View style={styles.divider} />
-
-          <View style={styles.metrics}>
-            <View style={styles.metricBox}>
-              <Text style={styles.metricValue}>7</Text>
-              <Text style={styles.metricLabel}>Unique users referred</Text>
-            </View>
-            <View style={styles.metricBox}>
-              <Text style={styles.metricValue}>$171.4</Text>
-              <Text style={styles.metricLabel}>Avg. Transaction Size</Text>
-            </View>
-          </View>
-
-           <View style={styles.divider} />
-
-          <View style={styles.networkSection}>
-            <Ionicons name="people-outline" size={32} color="#FFFFFF" />
-            <Text style={styles.networkTitle}>Growing Your Network</Text>
-            <Text style={styles.sectionDescription}>
-              Share your referral code with friends and family to help them
-              discover the platform
+              {tab}
             </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Performance Overview</Text>
+        <Text style={styles.sectionDescription}>
+          Your referral activity across all pools and timeframes
+        </Text>
+        <View style={styles.metrics}>
+          <View style={styles.metricBox}>
+            <Text style={styles.metricValue}>30</Text>
+            <Text style={styles.metricLabel}>Total Transactions</Text>
+          </View>
+          <View style={styles.metricBox}>
+            <Text style={styles.metricValue}>$5,142</Text>
+            <Text style={styles.metricLabel}>Total referred volume</Text>
           </View>
         </View>
 
-         {/* Start Sharing Today */}
+        <View style={styles.divider} />
+
+        <View style={styles.metrics}>
+          <View style={styles.metricBox}>
+            <Text style={styles.metricValue}>7</Text>
+            <Text style={styles.metricLabel}>Unique users referred</Text>
+          </View>
+          <View style={styles.metricBox}>
+            <Text style={styles.metricValue}>$171.4</Text>
+            <Text style={styles.metricLabel}>Avg. Transaction Size</Text>
+          </View>
+        </View>
+
+        <View style={styles.divider} />
+
+        <View style={styles.networkSection}>
+          <Ionicons name="people-outline" size={32} color="#FFFFFF" />
+          <Text style={styles.networkTitle}>Growing Your Network</Text>
+          <Text style={styles.sectionDescription}>
+            Share your referral code with friends and family to help them
+            discover the platform
+          </Text>
+        </View>
+      </View>
+
+      {/* Start Sharing Today */}
       <View style={styles.shareCard}>
         <Text style={styles.sectionTitle}>Start Sharing Today!</Text>
         <Text style={styles.sectionDescription}>
@@ -96,7 +106,7 @@ export default function Referrals() {
           </TouchableOpacity>
         </View>
       </View>
-      </ScrollView>
+    </ScrollView>
   );
 }
 
