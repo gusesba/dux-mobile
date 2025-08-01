@@ -74,7 +74,12 @@ export default function Pools() {
 
       {/* Search Bar */}
       <View style={styles.searchContainer}>
-        <Ionicons name="search" size={20} color="#959595" style={styles.searchIcon} />
+        <Ionicons
+          name="search"
+          size={20}
+          color="#959595"
+          style={styles.searchIcon}
+        />
         <TextInput
           style={styles.searchInput}
           placeholder="Search pools by name"
@@ -87,7 +92,11 @@ export default function Pools() {
       {/* Filters */}
       <View style={styles.filtersContainer}>
         <Text style={styles.filtersLabel}>Order by</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.filtersScroll}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.filtersScroll}
+        >
           {filters.map((filter) => (
             <TouchableOpacity
               key={filter}

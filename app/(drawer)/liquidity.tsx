@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 
 // Components
 import CurrentInvestmentsCard from "@/components/liquidity/CurrentInvestmentsCard";
@@ -15,9 +9,11 @@ import LifetimeOverviewCard from "@/components/liquidity/LifetimeOverviewCard";
 import PoolCard from "@/components/liquidity/PoolCard";
 import TabSelector from "@/components/liquidity/TabSelector";
 import { colors } from "@/constants/colors";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Liquidity() {
   const [activeTab, setActiveTab] = useState("pools");
+  const insets = useSafeAreaInsets();
 
   const userStats = {
     currentInvestments: {
@@ -98,7 +94,10 @@ export default function Liquidity() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: insets.bottom }}
+      >
         <View style={styles.header}>
           <Text style={styles.title}>Liquidity</Text>
         </View>
@@ -130,10 +129,7 @@ export default function Liquidity() {
         ) : (
           <View style={styles.historyContainer}>
             {history.map((item) => (
-              <HistoryItem
-                key={item.id}
-                {...item}
-              />
+              <HistoryItem key={item.id} {...item} />
             ))}
           </View>
         )}
