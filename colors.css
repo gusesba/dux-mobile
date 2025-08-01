@@ -1,0 +1,36 @@
+:root {
+  --primary-color: #4DD698;
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+  --grey: #202020;
+  --lightgrey: #959595;
+  --yellow: #FFD93D;
+  --red: #FF6B6B;
+  --dark-grey: #333;
+}
+
+.text-primary { color: var(--primary-color); }
+.text-black { color: var(--black); }
+.text-white { color: var(--white); }
+.text-grey { color: var(--grey); }
+.text-lightgrey { color: var(--lightgrey); }
+.text-yellow { color: var(--yellow); }
+.text-red { color: var(--red); }
+
+.bg-primary { background-color: var(--primary-color); }
+.bg-black { background-color: var(--black); }
+.bg-white { background-color: var(--white); }
+.bg-grey { background-color: var(--grey); }
+.bg-lightgrey { background-color: var(--lightgrey); }
+.bg-yellow { background-color: var(--yellow); }
+.bg-red { background-color: var(--red); }
+.bg-dark-grey { background-color: var(--dark-grey); }
+
+.border-primary { border-color: var(--primary-color); }
+.border-black { border-color: var(--black); }
+.border-white { border-color: var(--white); }
+.border-grey { border-color: var(--grey); }
+.border-lightgrey { border-color: var(--lightgrey); }
+.border-yellow { border-color: var(--yellow); }
+.border-red { border-color: var(--red); }
+.border-dark-grey { border-color: var(--dark-grey); } 
